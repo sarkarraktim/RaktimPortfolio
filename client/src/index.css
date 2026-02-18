@@ -1,0 +1,65 @@
+@font-face {
+  font-family: mplusrounded;
+  font-style: normal;
+  font-display: swap;
+  src: url("./assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf");
+}
+
+@font-face {
+  font-family: momoTrustdisplay;
+  font-style: normal;
+  font-display: swap;
+  src: url("./assets/fonts/Momo_Trust_Display/MomoTrustDisplay-Regular.ttf");
+}
+
+@font-face {
+  font-family: astasans;
+  font-style: normal;
+  font-display: swap;
+  src: url("./assets/fonts/Asta_Sans/AstaSans-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: titilliumweb;
+  font-style: normal;
+  font-display: swap;
+  src: url("./assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf");
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-mplusrounded: mplusrounded, "sans-serif";
+  --font-momotrustdisplay: momotrustdisplay, "sans-serif";
+  --font-astasans: astasans, "sans-serif";
+  --font-titilliumweb: titilliumweb, "sans-serif";
+
+
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+}
+
+@theme {
+  --animate-scrolllinkanimate: scrolllinkanimate 3s ease-in-out forwards;
+}
+@keyframes scrolllinkanimate {
+  0%{
+    background-color: #dbac00;
+  }
+  100%{
+    background-color: transparent;
+  }
+}
+
+@media print {
+  .controls {
+    display: none;
+  }
+}

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  --animate-barloading: barloading 1 ease-in-out forwards;
+}
+@keyframes barloading {
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
+}

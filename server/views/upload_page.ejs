@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=description content="">
+    <title>Upload items page</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main class=" w-screen min-h-screen max-h-max bg-[#918e8e] flex flex-col justify-center items-center ">
+
+        <div class="w-200 h-15 bg-[#9565ec] flex justify-between items-center | max-sm:w-screen max-sm:h-18 ">
+            <div class=" w-32 h-10"></div>
+            <span class="text-[white] font-bold ">Upload File</span>
+            <button type="button" onclick="to_items_page()"
+                class=" w-32 h-9 mr-3 border rounded bg-[#008cff] text-white hover:bg-[#66b6f8] active:scale-95 cursor-pointer ">Check Items</button>
+        </div>
+
+        <div
+            class="w-200 min-h-125 max-h-max bg-[#464444] flex flex-col justify-center items-center | max-sm:w-screen ">
+            <!-- The Form -->
+            <form class="w-[60%] mt-2 flex flex-col gap-2 | max-sm:w-[90%] ">
+
+                <!-- div-Name -->
+                <div class="w-full h-auto flex flex-col items-center gap-0 ">
+                    <!-- input -->
+                    <div class="w-full min-h-12 flex justify-between items-center  ">
+                        <label for="itemName" class="text-[white] font-bold">Item Name:</label>
+                        <input id="itemName" name="ItemNAME" type="text" placeholder="Enter item name"
+                            title="Enter item name" maxlength="50"
+                            class="w-88 h-8 pl-3.75 border rounded bg-[white] | max-sm:w-56 ">
+                    </div>
+                    <!-- error -->
+                    <div id="itemName_errDisplay" class="w-full text-[#ff0b0b] font-bold min-h-8 text-center "></div>
+                </div>
+
+                <!-- div-ID -->
+                <div class="w-full h-auto flex flex-col items-center gap-0 ">
+                    <!-- input -->
+                    <div class="w-full min-h-12 flex justify-between items-center  ">
+                        <label for="itemId" class="text-[white] font-bold">Item-ID:</label>
+                        <input id="itemId" name="ItemID" type="text" placeholder="Enter item id" title="Enter item id"
+                            maxlength="50" class="w-88 h-8 pl-3.75 border rounded bg-[white] | max-sm:w-56 ">
+                    </div>
+                    <!-- error -->
+                    <div id="itemid_errDisplay" class="w-full text-[#ff0b0b] font-bold min-h-8 text-center "></div>
+                </div>
+
+                <!-- div-File -->
+                <div class=" w-full flex flex-col justify-center items-start text-[white] font-bold ">
+                    <div class="w-auto h-auto flex">
+                        <button type="button" title="Choose item file" id="chooseItem"
+                            class=" w-30 border rounded hover:bg-[#9c9b9b] active:scale-95 cursor-pointer select-none ">Choose
+                            File</button>
+
+                        <div id="chooseItemName" class="ml-5"> No file selected </div>
+                    </div>
+
+                    <div id="chooseItemRender" class="w-50 h-45 overflow-hidden mt-5"></div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="w-full flex justify-center items-center">
+                    <button type="submit"
+                        class="w-32 h-9 bg-[#008cff] rounded-[5px] text-[white] font-bold hover:bg-[#66b6f8] active:scale-95 cursor-pointer ">
+                        Upload
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Submit Display -->
+            <div class="mt-4 w-full h-12 flex justify-center items-center ">
+                <span id="formSubmitDisplay" class="text-[#03ad03] font-bold "></span>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="./js/upload_page.js" defer></script>
+</body>
+
+</html>
