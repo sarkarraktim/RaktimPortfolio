@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import { InitializeGridFS } from "./gridfs.config.js";
 config();
 
-export const PORT = process.env.PORT;
+export const PORT = process.env.PORT || 4000;
 export const NODE_ENV = process.env.NODE_ENV;
 const MONGO_URI = process.env.MONGO_URI;
 
