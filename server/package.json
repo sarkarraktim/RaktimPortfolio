@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"nodemon server.js\" \"npx @tailwindcss/cli -i ./views/css/input.css -o ./views/css/style.css --watch\"",
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "done": "nodemon server.js",
     "build": "npm install"
   },
   "keywords": [],

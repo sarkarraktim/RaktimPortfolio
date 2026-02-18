@@ -1,10 +1,11 @@
 import express from 'express';
-import { mongodbConnect } from './configs/server.config.js';
+import { localhost, mongodbConnect, PORT } from './configs/server.config.js';
 import { serverRouter } from './routers/server.route.js';
 import { liveServerConnect } from './middlewares/liveserver.mid.js';
 import cors from 'cors';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import chalk from 'chalk';
 
 /*Variable declearation*/
 const app = express();
@@ -39,6 +40,9 @@ function runserver() {
   try {
     //mongodb and server connect:
     mongodbConnect(app);
+    app.listen(PORT, () => {
+      console.log(`Server Running at port: ${chalk.greenBright(`http://${localhost}:${PORT}`)}`);
+    });
 
   } catch (error) {
     error instanceof Error ? 
