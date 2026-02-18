@@ -53,7 +53,7 @@ const App = () => {
     })();
 
     (async function APIfetch() {
-      const res = await fetch('http://localhost:8080/api/items', {method: 'GET'})
+      const res = await fetch('https://raktimportfolio.onrender.com/api/items', {method: 'GET'})
       if(res.ok){
         const {APIdata} = await res.json();
         setskillsData(APIdata);
@@ -71,7 +71,7 @@ const App = () => {
       const dfile = skillsData.find((e) => e.b_iName.includes('RAKTIM RESUME') && e.b_fileurl.endsWith('.pdf'));
       if(dfile) {
         let href = dfile.b_fileurl;
-        if (href.startsWith('/')) href = `http://localhost:8080${href}`;
+        if (href.startsWith('/')) href = `https://raktimportfolio.onrender.com${href}`;
         const a = document.createElement('a');
         a.href = href;
         a.download = '';
@@ -101,7 +101,7 @@ const App = () => {
             <div className='w-60 h-60 absolute top-11 right-0 bg-[#D9D9D9] rounded-full flex justify-center items-center overflow-hidden | max-xl:static '>
               {
                 skillsData.filter((e) => e.b_iName.includes('Raktim Photo')).map((e, i)=> (
-                  <img key={i} src={`http://localhost:8080${e.b_images}`} className='scale-106 mt-18'></img>
+                  <img key={i} src={`https://raktimportfolio.onrender.com${e.b_images}`} className='scale-106 mt-18'></img>
                 ))
               }
             </div>
@@ -141,7 +141,7 @@ const App = () => {
                   const bID = Number(b.b_iID);
                   if(!Number.isNaN(aID) && !Number.isNaN(bID)) return aID - bID;
                 }).slice(0, 9).filter((e) => !e.b_fileurl.toLowerCase().endsWith('.pdf') && !e.b_iName.includes('Raktim Photo')).map((e, i) =>(
-                  <Skills_card size="58" key={i} name={e.b_iName} image={`http://localhost:8080${e.b_images}`}/>
+                  <Skills_card size="58" key={i} name={e.b_iName} image={`https://raktimportfolio.onrender.com${e.b_images}`}/>
                 ))
               }
             </div>
@@ -171,7 +171,7 @@ const App = () => {
                   const bID = Number(b.b_iID);
                   if(!Number.isNaN(aID) && !Number.isNaN(bID)) return aID - bID;
                 }).slice(9, 15).filter((e) => !e.b_fileurl.toLowerCase().endsWith('.pdf') && !e.b_iName.includes('Raktim Photo')).map((e, i)=>(
-                  <Skills_card size='45' key={i} name={e.b_iName} image={`http://localhost:8080${e.b_fileurl}`}/>
+                  <Skills_card size='45' key={i} name={e.b_iName} image={`https://raktimportfolio.onrender.com${e.b_fileurl}`}/>
                 ))
               }
             </div>
@@ -205,7 +205,7 @@ const App = () => {
                   const bID = Number(b.b_iID);
                   if (!Number.isNaN(aID) && !Number.isNaN(bID)) return aID - bID;
                 }).slice(15, 16).filter((e) => !e.b_fileurl.toLowerCase().endsWith('.pdf') && !e.b_iName.includes('Raktim Photo')).map((e, i)=>(
-                  <Projects_card key={i} Title={e.b_iName} image={`http://localhost:8080${e.b_images}`} size="300" githublink={projobj.ott.githublink} description={projobj.ott.desc} />
+                  <Projects_card key={i} Title={e.b_iName} image={`https://raktimportfolio.onrender.com${e.b_images}`} size="300" githublink={projobj.ott.githublink} description={projobj.ott.desc} />
                 ))
               }
               {/* Climate weather web App */}
@@ -215,7 +215,7 @@ const App = () => {
                   const bID = Number(b.b_iID);
                   if (!Number.isNaN(aID) && !Number.isNaN(bID)) return aID - bID;
                 }).slice(16, 17).filter((e) => !e.b_fileurl.toLowerCase().endsWith('.pdf') && !e.b_iName.includes('Raktim Photo')).map((e, i)=>(
-                  <Projects_card key={i} Title={e.b_iName} image={`http://localhost:8080${e.b_images}`} size="300" githublink={projobj.weather.githublink} description={projobj.weather.desc} />
+                  <Projects_card key={i} Title={e.b_iName} image={`https://raktimportfolio.onrender.com${e.b_images}`} size="300" githublink={projobj.weather.githublink} description={projobj.weather.desc} />
                 ))
               }
             </div>
