@@ -6,6 +6,9 @@ import LiveReloadServer from "livereload";
 */
 export const liveServerConnect = (app, __dirname, path) => {
 
+  if(process.env.NODE_ENV = "production" || process.env.DISABLE_LIVERELOAD === 'true') return;
+
+  if(!connectlivereload || !LiveReloadServer) return;
   const Lsr = LiveReloadServer.createServer({
     port: 35729,
     exts: ["ejs", "js", "css"],

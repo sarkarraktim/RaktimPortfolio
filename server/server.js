@@ -1,5 +1,5 @@
 import express from 'express';
-import { mongodbConnect, NODE_ENV } from './configs/server.config.js';
+import { mongodbConnect } from './configs/server.config.js';
 import { serverRouter } from './routers/server.route.js';
 import { liveServerConnect } from './middlewares/liveserver.mid.js';
 import cors from 'cors';
@@ -29,9 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 /*Live Refresh browser*/
-if(NODE_ENV === 'development') {
-  liveServerConnect(app, __dirname, path);
-}
+liveServerConnect(app, __dirname, path);
 
 /*Router*/
 app.use(serverRouter);
