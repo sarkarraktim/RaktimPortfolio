@@ -22,9 +22,6 @@ app.use(cors());
 /*ejs setting*/
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.use('/views/assets', express.static(__dirname + '/views/assets'));
-app.use('/views/css', express.static(__dirname + '/views/css'));
-app.use('/views/js', express.static(__dirname + '/views/js'));
 app.use(express.static('views'));
 
 /*json object get data*/
