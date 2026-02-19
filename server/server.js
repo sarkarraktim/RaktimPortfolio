@@ -16,7 +16,6 @@ const __dirname = dirname(__filename);
 const crossOrigin = {
   origin: [`http://localhost:80`]
 }
-crossOrigin
 
 app.use(cors());
 
