@@ -71,12 +71,13 @@ const App = () => {
       const dfile = skillsData.find((e) => e.b_iName.includes('RAKTIM RESUME') && e.b_fileurl.endsWith('.pdf'));
       if(dfile) {
         let href = dfile.b_fileurl;
-        if (href.startsWith('/')) href = `https://raktimportfolio.onrender.com${href}`;
+        if (href.startsWith('/')) href = {`https://raktimportfolio.onrender.com${href}`;
         const a = document.createElement('a');
         a.href = href;
         a.download = '';
         a.click();
         a.remove();
+       }
       }
 
     }
